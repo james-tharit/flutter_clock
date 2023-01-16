@@ -29,7 +29,13 @@ flutter pub get
 flutter devices
 ```
 
-- run by specific device (`macos`, `ios`, `chrome`)
+- run in your simulator without providing `-d`
+
+```shell
+flutter run
+```
+
+- run by specific device (`macos`, `chrome`)
 
 ```shell
 flutter run -d <device>
