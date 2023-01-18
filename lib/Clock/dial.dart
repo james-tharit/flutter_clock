@@ -13,11 +13,12 @@ class DialPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    var paint1 = Paint()
+    var baseDial = Paint()
       ..color = dialColor
       ..style = PaintingStyle.fill;
-    print(offset);
-    canvas.drawCircle(offset, radius, paint1);
+
+    canvas.drawCircle(offset, radius, baseDial);
+    canvas.drawCircle(offset, radius - 10, baseDial..color = Colors.black);
   }
 
   @override
