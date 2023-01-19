@@ -18,7 +18,8 @@ class DialPainter extends CustomPainter {
       ..style = PaintingStyle.fill;
 
     canvas.drawCircle(offset, radius, baseDial);
-    canvas.drawCircle(offset, radius - 10, baseDial..color = Colors.black);
+    // draw border
+    canvas.drawCircle(offset, radius - 8, baseDial..color = Colors.black);
   }
 
   @override
