@@ -1,6 +1,6 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_clock/Clock/hour_pointer.dart';
+import 'package:flutter_clock/Clock/minute_pointer.dart';
 import 'package:flutter_clock/Clock/second_pointer.dart';
 import 'package:flutter_clock/color_const.dart' as color_const;
 import 'dial.dart';
@@ -26,6 +26,8 @@ class Clock extends StatelessWidget {
             SecondPointer(
               radius: dialRadius - 12,
             ),
+            MinutePointer(radius: dialRadius - 32),
+            HourPointer(radius: dialRadius - 64)
           ],
         );
       },
