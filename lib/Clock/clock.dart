@@ -10,27 +10,32 @@ class Clock extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        Offset centerGlobalOffset =
-            Offset(constraints.maxWidth / 2, constraints.maxHeight / 2);
-        double dialRadius = constraints.maxWidth / 3;
-        return Stack(
-          children: [
-            CustomPaint(
-              painter: DialPainter(
-                  dialColor: color_const.secondaryVariant,
-                  offset: centerGlobalOffset,
-                  radius: dialRadius),
-            ),
-            SecondPointer(
-              radius: dialRadius - 12,
-            ),
-            MinutePointer(radius: dialRadius - 32),
-            HourPointer(radius: dialRadius - 64)
-          ],
-        );
-      },
+    return Container(
+      color: color_const.error,
+      constraints: const BoxConstraints(minWidth: 600, minHeight: 600),
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          Offset centerGlobalOffset =
+              Offset(constraints.maxWidth / 2, constraints.maxHeight / 2);
+          double dialRadius =
+              constraints.maxWidth > 400 ? constraints.maxWidth / 3 : 150;
+          return Stack(
+            children: [
+              CustomPaint(
+                painter: DialPainter(
+                    dialColor: color_const.secondaryVariant,
+                    offset: centerGlobalOffset,
+                    radius: dialRadius),
+              ),
+              SecondPointer(
+                radius: dialRadius - 24,
+              ),
+              MinutePointer(radius: dialRadius - 32),
+              HourPointer(radius: dialRadius - 64)
+            ],
+          );
+        },
+      ),
     );
   }
 }
